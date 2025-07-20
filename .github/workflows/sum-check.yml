@@ -1,0 +1,26 @@
+name: Scrape and Sum Table Data
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  scrape_sum:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v3
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: 📦 Install Dependencies
+        run: |
+          npm install
+          npx playwright install --with-deps
+
+      - name: Scrape and Log Sum by 23ds3000150@ds.study.iitm.ac.in
+        run: node scrape_sum.js
