@@ -1,4 +1,4 @@
-const { chromium } = require('playwright');
+import { chromium } from 'playwright';
 
 const urls = Array.from({ length: 10 }, (_, i) => `https://sanand0.github.io/tdsdata/js_table/?seed=${i}`);
 
